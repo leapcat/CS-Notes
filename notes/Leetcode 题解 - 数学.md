@@ -1,44 +1,44 @@
+# Leetcode 题解 - 数学
 <!-- GFM-TOC -->
-* [素数分解](#素数分解)
-* [整除](#整除)
+* [Leetcode 题解 - 数学](#leetcode-题解---数学)
+    * [素数分解](#素数分解)
+    * [整除](#整除)
     * [最大公约数最小公倍数](#最大公约数最小公倍数)
-    * [生成素数序列](#生成素数序列)
-        * [最大公约数](#最大公约数)
-    * [使用位操作和减法求解最大公约数](#使用位操作和减法求解最大公约数)
-* [进制转换](#进制转换)
-    * [7 进制](#7-进制)
-    * [16 进制](#16-进制)
-    * [26 进制](#26-进制)
-* [阶乘](#阶乘)
-    * [统计阶乘尾部有多少个 0](#统计阶乘尾部有多少个-0)
-* [字符串加法减法](#字符串加法减法)
-    * [二进制加法](#二进制加法)
-    * [字符串加法](#字符串加法)
-* [相遇问题](#相遇问题)
-    * [改变数组元素使所有的数组元素都相等](#改变数组元素使所有的数组元素都相等)
-    * [解法 1](#解法-1)
-    * [解法 2](#解法-2)
-* [多数投票问题](#多数投票问题)
-    * [数组中出现次数多于 n / 2 的元素](#数组中出现次数多于-n--2-的元素)
-* [其它](#其它)
-    * [平方数](#平方数)
-    * [3 的 n 次方](#3-的-n-次方)
-    * [乘积数组](#乘积数组)
-    * [找出数组中的乘积最大的三个数](#找出数组中的乘积最大的三个数)
+        * [1. 生成素数序列](#1-生成素数序列)
+        * [2. 最大公约数](#2-最大公约数)
+        * [3. 使用位操作和减法求解最大公约数](#3-使用位操作和减法求解最大公约数)
+    * [进制转换](#进制转换)
+        * [1. 7 进制](#1-7-进制)
+        * [2. 16 进制](#2-16-进制)
+        * [3. 26 进制](#3-26-进制)
+    * [阶乘](#阶乘)
+        * [1. 统计阶乘尾部有多少个 0](#1-统计阶乘尾部有多少个-0)
+    * [字符串加法减法](#字符串加法减法)
+        * [1. 二进制加法](#1-二进制加法)
+        * [2. 字符串加法](#2-字符串加法)
+    * [相遇问题](#相遇问题)
+        * [1. 改变数组元素使所有的数组元素都相等](#1-改变数组元素使所有的数组元素都相等)
+    * [多数投票问题](#多数投票问题)
+        * [1. 数组中出现次数多于 n / 2 的元素](#1-数组中出现次数多于-n--2-的元素)
+    * [其它](#其它)
+        * [1. 平方数](#1-平方数)
+        * [2. 3 的 n 次方](#2-3-的-n-次方)
+        * [3. 乘积数组](#3-乘积数组)
+        * [4. 找出数组中的乘积最大的三个数](#4-找出数组中的乘积最大的三个数)
 <!-- GFM-TOC -->
 
 
-# 素数分解
+## 素数分解
 
 每一个数都可以分解成素数的乘积，例如 84 = 2<sup>2</sup> \* 3<sup>1</sup> \* 5<sup>0</sup> \* 7<sup>1</sup> \* 11<sup>0</sup> \* 13<sup>0</sup> \* 17<sup>0</sup> \* …
 
-# 整除
+## 整除
 
 令 x = 2<sup>m0</sup> \* 3<sup>m1</sup> \* 5<sup>m2</sup> \* 7<sup>m3</sup> \* 11<sup>m4</sup> \* …
 
 令 y = 2<sup>n0</sup> \* 3<sup>n1</sup> \* 5<sup>n2</sup> \* 7<sup>n3</sup> \* 11<sup>n4</sup> \* …
 
-如果 x 整除 y（y mod x == 0），则对于所有 i，mi <= ni。
+如果 x 整除 y（y mod x == 0），则对于所有 i，mi \<= ni。
 
 ## 最大公约数最小公倍数
 
@@ -46,9 +46,11 @@ x 和 y 的最大公约数为：gcd(x,y) =  2<sup>min(m0,n0)</sup> \* 3<sup>min(
 
 x 和 y 的最小公倍数为：lcm(x,y) =  2<sup>max(m0,n0)</sup> \* 3<sup>max(m1,n1)</sup> \* 5<sup>max(m2,n2)</sup> \* ...
 
-## 生成素数序列
+### 1. 生成素数序列
 
-[204. Count Primes (Easy)](https://leetcode.com/problems/count-primes/description/)
+204\. Count Primes (Easy)
+
+[Leetcode](https://leetcode.com/problems/count-primes/description/) / [力扣](https://leetcode-cn.com/problems/count-primes/description/)
 
 埃拉托斯特尼筛法在每次找到一个素数时，将能被素数整除的数排除掉。
 
@@ -70,7 +72,7 @@ public int countPrimes(int n) {
 }
 ```
 
-### 最大公约数
+### 2. 最大公约数
 
 ```java
 int gcd(int a, int b) {
@@ -86,7 +88,7 @@ int lcm(int a, int b) {
 }
 ```
 
-## 使用位操作和减法求解最大公约数
+### 3. 使用位操作和减法求解最大公约数
 
 [编程之美：2.7](#)
 
@@ -120,11 +122,13 @@ public int gcd(int a, int b) {
 }
 ```
 
-# 进制转换
+## 进制转换
 
-## 7 进制
+### 1. 7 进制
 
-[504. Base 7 (Easy)](https://leetcode.com/problems/base-7/description/)
+504\. Base 7 (Easy)
+
+[Leetcode](https://leetcode.com/problems/base-7/description/) / [力扣](https://leetcode-cn.com/problems/base-7/description/)
 
 ```java
 public String convertToBase7(int num) {
@@ -153,9 +157,11 @@ public String convertToBase7(int num) {
 }
 ```
 
-## 16 进制
+### 2. 16 进制
 
-[405. Convert a Number to Hexadecimal (Easy)](https://leetcode.com/problems/convert-a-number-to-hexadecimal/description/)
+405\. Convert a Number to Hexadecimal (Easy)
+
+[Leetcode](https://leetcode.com/problems/convert-a-number-to-hexadecimal/description/) / [力扣](https://leetcode-cn.com/problems/convert-a-number-to-hexadecimal/description/)
 
 ```html
 Input:
@@ -186,9 +192,11 @@ public String toHex(int num) {
 }
 ```
 
-## 26 进制
+### 3. 26 进制
 
-[168. Excel Sheet Column Title (Easy)](https://leetcode.com/problems/excel-sheet-column-title/description/)
+168\. Excel Sheet Column Title (Easy)
+
+[Leetcode](https://leetcode.com/problems/excel-sheet-column-title/description/) / [力扣](https://leetcode-cn.com/problems/excel-sheet-column-title/description/)
 
 ```html
 1 -> A
@@ -212,11 +220,13 @@ public String convertToTitle(int n) {
 }
 ```
 
-# 阶乘
+## 阶乘
 
-## 统计阶乘尾部有多少个 0
+### 1. 统计阶乘尾部有多少个 0
 
-[172. Factorial Trailing Zeroes (Easy)](https://leetcode.com/problems/factorial-trailing-zeroes/description/)
+172\. Factorial Trailing Zeroes (Easy)
+
+[Leetcode](https://leetcode.com/problems/factorial-trailing-zeroes/description/) / [力扣](https://leetcode-cn.com/problems/factorial-trailing-zeroes/description/)
 
 尾部的 0 由 2 * 5 得来，2 的数量明显多于 5 的数量，因此只要统计有多少个 5 即可。
 
@@ -230,11 +240,13 @@ public int trailingZeroes(int n) {
 
 如果统计的是 N! 的二进制表示中最低位 1 的位置，只要统计有多少个 2 即可，该题目出自 [编程之美：2.2](#) 。和求解有多少个 5 一样，2 的个数为 N/2 + N/2<sup>2</sup> + N/2<sup>3</sup> + ...
 
-# 字符串加法减法
+## 字符串加法减法
 
-## 二进制加法
+### 1. 二进制加法
 
-[67. Add Binary (Easy)](https://leetcode.com/problems/add-binary/description/)
+67\. Add Binary (Easy)
+
+[Leetcode](https://leetcode.com/problems/add-binary/description/) / [力扣](https://leetcode-cn.com/problems/add-binary/description/)
 
 ```html
 a = "11"
@@ -260,9 +272,11 @@ public String addBinary(String a, String b) {
 }
 ```
 
-## 字符串加法
+### 2. 字符串加法
 
-[415. Add Strings (Easy)](https://leetcode.com/problems/add-strings/description/)
+415\. Add Strings (Easy)
+
+[Leetcode](https://leetcode.com/problems/add-strings/description/) / [力扣](https://leetcode-cn.com/problems/add-strings/description/)
 
 字符串的值为非负整数。
 
@@ -280,11 +294,13 @@ public String addStrings(String num1, String num2) {
 }
 ```
 
-# 相遇问题
+## 相遇问题
 
-## 改变数组元素使所有的数组元素都相等
+### 1. 改变数组元素使所有的数组元素都相等
 
-[462. Minimum Moves to Equal Array Elements II (Medium)](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/description/)
+462\. Minimum Moves to Equal Array Elements II (Medium)
+
+[Leetcode](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/description/) / [力扣](https://leetcode-cn.com/problems/minimum-moves-to-equal-array-elements-ii/description/)
 
 ```html
 Input:
@@ -303,11 +319,11 @@ Only two moves are needed (remember each move increments or decrements one eleme
 
 这是个典型的相遇问题，移动距离最小的方式是所有元素都移动到中位数。理由如下：
 
-设 m 为中位数。a 和 b 是 m 两边的两个元素，且 b > a。要使 a 和 b 相等，它们总共移动的次数为 b - a，这个值等于 (b - m) + (m - a)，也就是把这两个数移动到中位数的移动次数。
+设 m 为中位数。a 和 b 是 m 两边的两个元素，且 b \> a。要使 a 和 b 相等，它们总共移动的次数为 b - a，这个值等于 (b - m) + (m - a)，也就是把这两个数移动到中位数的移动次数。
 
 设数组长度为 N，则可以找到 N/2 对 a 和 b 的组合，使它们都移动到 m 的位置。
 
-## 解法 1
+**解法 1**  
 
 先排序，时间复杂度：O(NlogN)
 
@@ -325,7 +341,7 @@ public int minMoves2(int[] nums) {
 }
 ```
 
-## 解法 2
+**解法 2**  
 
 使用快速选择找到中位数，时间复杂度 O(N)
 
@@ -376,11 +392,13 @@ private void swap(int[] nums, int i, int j) {
 }
 ```
 
-# 多数投票问题
+## 多数投票问题
 
-## 数组中出现次数多于 n / 2 的元素
+### 1. 数组中出现次数多于 n / 2 的元素
 
-[169. Majority Element (Easy)](https://leetcode.com/problems/majority-element/description/)
+169\. Majority Element (Easy)
+
+[Leetcode](https://leetcode.com/problems/majority-element/description/) / [力扣](https://leetcode-cn.com/problems/majority-element/description/)
 
 先对数组排序，最中间那个数出现次数一定多于 n / 2。
 
@@ -404,11 +422,13 @@ public int majorityElement(int[] nums) {
 }
 ```
 
-# 其它
+## 其它
 
-## 平方数
+### 1. 平方数
 
-[367. Valid Perfect Square (Easy)](https://leetcode.com/problems/valid-perfect-square/description/)
+367\. Valid Perfect Square (Easy)
+
+[Leetcode](https://leetcode.com/problems/valid-perfect-square/description/) / [力扣](https://leetcode-cn.com/problems/valid-perfect-square/description/)
 
 ```html
 Input: 16
@@ -432,9 +452,11 @@ public boolean isPerfectSquare(int num) {
 }
 ```
 
-## 3 的 n 次方
+### 2. 3 的 n 次方
 
-[326. Power of Three (Easy)](https://leetcode.com/problems/power-of-three/description/)
+326\. Power of Three (Easy)
+
+[Leetcode](https://leetcode.com/problems/power-of-three/description/) / [力扣](https://leetcode-cn.com/problems/power-of-three/description/)
 
 ```java
 public boolean isPowerOfThree(int n) {
@@ -442,9 +464,11 @@ public boolean isPowerOfThree(int n) {
 }
 ```
 
-## 乘积数组
+### 3. 乘积数组
 
-[238. Product of Array Except Self (Medium)](https://leetcode.com/problems/product-of-array-except-self/description/)
+238\. Product of Array Except Self (Medium)
+
+[Leetcode](https://leetcode.com/problems/product-of-array-except-self/description/) / [力扣](https://leetcode-cn.com/problems/product-of-array-except-self/description/)
 
 ```html
 For example, given [1,2,3,4], return [24,12,8,6].
@@ -473,9 +497,11 @@ public int[] productExceptSelf(int[] nums) {
 }
 ```
 
-## 找出数组中的乘积最大的三个数
+### 4. 找出数组中的乘积最大的三个数
 
-[628. Maximum Product of Three Numbers (Easy)](https://leetcode.com/problems/maximum-product-of-three-numbers/description/)
+628\. Maximum Product of Three Numbers (Easy)
+
+[Leetcode](https://leetcode.com/problems/maximum-product-of-three-numbers/description/) / [力扣](https://leetcode-cn.com/problems/maximum-product-of-three-numbers/description/)
 
 ```html
 Input: [1,2,3,4]
@@ -507,9 +533,3 @@ public int maximumProduct(int[] nums) {
     return Math.max(max1*max2*max3, max1*min1*min2);
 }
 ```
-
-
-
-
-</br><div align="center">🎨️欢迎关注我的公众号 CyC2018，在公众号后台回复关键字 **资料** 可领取复习大纲，这份大纲是我花了一整年时间整理的面试知识点列表，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点。可以说我基本是按照这份大纲来进行复习的，这份大纲对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。</div></br>
-<div align="center"><img width="180px" src="https://cyc-1256109796.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7.jpg"></img></div>
